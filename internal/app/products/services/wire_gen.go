@@ -7,9 +7,9 @@ package services
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/api/proto"
-	"github.com/sdgmf/go-project-sample/internal/pkg/config"
-	"github.com/sdgmf/go-project-sample/internal/pkg/log"
+	"github.com/keyeMyria/gin-wire-plate/api/proto"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/config"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/log"
 )
 
 // Injectors from wire.go:

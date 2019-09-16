@@ -4,7 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/models"
 )
 
 type DetailsRepository interface {

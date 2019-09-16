@@ -2,8 +2,8 @@ package grpcclients
 
 import (
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/api/proto"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
+	"github.com/keyeMyria/gin-wire-plate/api/proto"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/grpc"
 )
 
 func NewReviewsClient(client *grpc.Client) (proto.ReviewsClient, error) {

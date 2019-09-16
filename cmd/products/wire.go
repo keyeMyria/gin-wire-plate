@@ -4,17 +4,17 @@ package main
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/app/products"
-	"github.com/sdgmf/go-project-sample/internal/app/products/controllers"
-	"github.com/sdgmf/go-project-sample/internal/app/products/services"
-	"github.com/sdgmf/go-project-sample/internal/app/products/grpcclients"
-	"github.com/sdgmf/go-project-sample/internal/pkg/config"
-	"github.com/sdgmf/go-project-sample/internal/pkg/consul"
-	"github.com/sdgmf/go-project-sample/internal/pkg/log"
-	"github.com/sdgmf/go-project-sample/internal/pkg/jaeger"
-	"github.com/sdgmf/go-project-sample/internal/pkg/app"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/products"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/products/controllers"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/products/services"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/products/grpcclients"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/config"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/consul"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/log"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/jaeger"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/app"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/grpc"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/http"
 )
 
 var providerSet = wire.NewSet(

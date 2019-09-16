@@ -7,8 +7,8 @@ import (
 	"syscall"
 
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/grpc"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/http"
 	"go.uber.org/zap"
 )
 

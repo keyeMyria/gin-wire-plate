@@ -1,4 +1,4 @@
-module github.com/sdgmf/go-project-sample
+module github.com/keyeMyria/gin-wire-plate
 
 go 1.12
 

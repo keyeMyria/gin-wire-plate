@@ -3,8 +3,8 @@ package products
 import (
 	"github.com/google/wire"
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/internal/pkg/app"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/app"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/http"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 )

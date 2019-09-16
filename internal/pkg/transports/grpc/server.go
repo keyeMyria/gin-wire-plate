@@ -11,7 +11,7 @@ import (
 	consulApi "github.com/hashicorp/consul/api"
 	"github.com/opentracing/opentracing-go"
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/internal/pkg/utils/netutil"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/utils/netutil"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"

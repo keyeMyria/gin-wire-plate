@@ -7,10 +7,10 @@ package grpcservers
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/app/details/services"
-	"github.com/sdgmf/go-project-sample/internal/pkg/config"
-	"github.com/sdgmf/go-project-sample/internal/pkg/database"
-	"github.com/sdgmf/go-project-sample/internal/pkg/log"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/details/services"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/config"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/database"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/log"
 )
 
 // Injectors from wire.go:

@@ -7,19 +7,19 @@ package main
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/app/ratings"
-	"github.com/sdgmf/go-project-sample/internal/app/ratings/controllers"
-	"github.com/sdgmf/go-project-sample/internal/app/ratings/grpcservers"
-	"github.com/sdgmf/go-project-sample/internal/app/ratings/repositories"
-	"github.com/sdgmf/go-project-sample/internal/app/ratings/services"
-	"github.com/sdgmf/go-project-sample/internal/pkg/app"
-	"github.com/sdgmf/go-project-sample/internal/pkg/config"
-	"github.com/sdgmf/go-project-sample/internal/pkg/consul"
-	"github.com/sdgmf/go-project-sample/internal/pkg/database"
-	"github.com/sdgmf/go-project-sample/internal/pkg/jaeger"
-	"github.com/sdgmf/go-project-sample/internal/pkg/log"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/ratings"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/ratings/controllers"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/ratings/grpcservers"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/ratings/repositories"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/ratings/services"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/app"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/config"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/consul"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/database"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/jaeger"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/log"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/grpc"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/transports/http"
 )
 
 // Injectors from wire.go:

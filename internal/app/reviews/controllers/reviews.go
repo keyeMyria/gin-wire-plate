@@ -5,7 +5,7 @@ import (
 	"go.uber.org/zap"
 	"net/http"
 	"strconv"
-	"github.com/sdgmf/go-project-sample/internal/app/reviews/services"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/reviews/services"
 )
 
 type ReviewsController struct {

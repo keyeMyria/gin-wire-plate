@@ -5,7 +5,7 @@ import (
 	"go.uber.org/zap"
 	"net/http"
 	"strconv"
-	"github.com/sdgmf/go-project-sample/internal/app/details/services"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/details/services"
 )
 
 type DetailsController struct {

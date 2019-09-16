@@ -3,7 +3,7 @@ package repositories
 import (
 	"github.com/jinzhu/gorm"
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
 )
 

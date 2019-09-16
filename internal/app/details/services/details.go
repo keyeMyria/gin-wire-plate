@@ -3,8 +3,8 @@ package services
 import (
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
-	"github.com/sdgmf/go-project-sample/internal/app/details/repositories"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/models"
+	"github.com/keyeMyria/gin-wire-plate/internal/app/details/repositories"
 )
 
 type DetailsService interface {

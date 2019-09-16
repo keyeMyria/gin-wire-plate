@@ -7,7 +7,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/models"
 )
 
 // Options is  configuration of database

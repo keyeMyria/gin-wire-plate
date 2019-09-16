@@ -2,8 +2,8 @@ package services
 
 import (
 	"flag"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
-	"github.com/sdgmf/go-project-sample/mocks"
+	"github.com/keyeMyria/gin-wire-plate/internal/pkg/models"
+	"github.com/keyeMyria/gin-wire-plate/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"testing"
