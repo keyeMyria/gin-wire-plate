@@ -3,10 +3,10 @@ package details
 import (
 	"github.com/google/wire"
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/internal/pkg/app"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http"
 	"github.com/spf13/viper"
+	"github.com/wahello/gin-wire-plate/internal/pkg/app"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
 	"go.uber.org/zap"
 )
 

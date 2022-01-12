@@ -4,10 +4,10 @@ import (
 	"context"
 	"flag"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/sdgmf/go-project-sample/api/proto"
-	"github.com/sdgmf/go-project-sample/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"github.com/wahello/gin-wire-plate/api/proto"
+	"github.com/wahello/gin-wire-plate/mocks"
 	"google.golang.org/grpc"
 	"testing"
 )

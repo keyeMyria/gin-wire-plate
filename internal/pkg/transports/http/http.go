@@ -3,8 +3,11 @@ package http
 import (
 	"context"
 	"fmt"
+	"net/http"
+	"time"
+
 	"github.com/gin-contrib/pprof"
-	"github.com/gin-contrib/zap"
+	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
 	consulApi "github.com/hashicorp/consul/api"
@@ -12,12 +15,10 @@ import (
 	"github.com/opentracing/opentracing-go"
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http/middlewares/ginprom"
-	"github.com/sdgmf/go-project-sample/internal/pkg/utils/netutil"
 	"github.com/spf13/viper"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http/middlewares/ginprom"
+	"github.com/wahello/gin-wire-plate/internal/pkg/utils/netutil"
 	"go.uber.org/zap"
-	"net/http"
-	"time"
 )
 
 type Options struct {

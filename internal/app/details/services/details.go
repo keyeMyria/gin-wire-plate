@@ -2,9 +2,9 @@ package services
 
 import (
 	"github.com/pkg/errors"
+	"github.com/wahello/gin-wire-plate/internal/app/details/repositories"
+	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
-	"github.com/sdgmf/go-project-sample/internal/app/details/repositories"
 )
 
 type DetailsService interface {
@@ -18,7 +18,7 @@ type DefaultDetailsService struct {
 
 func NewDetailService(logger *zap.Logger, Repository repositories.DetailsRepository) DetailsService {
 	return &DefaultDetailsService{
-		logger:  logger.With(zap.String("type","DefaultDetailsService")),
+		logger:     logger.With(zap.String("type", "DefaultDetailsService")),
 		Repository: Repository,
 	}
 }

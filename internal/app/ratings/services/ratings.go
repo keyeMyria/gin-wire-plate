@@ -2,8 +2,8 @@ package services
 
 import (
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/internal/app/ratings/repositories"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
+	"github.com/wahello/gin-wire-plate/internal/app/ratings/repositories"
+	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
 )
 

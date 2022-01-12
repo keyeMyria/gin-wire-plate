@@ -7,8 +7,8 @@ import (
 	"syscall"
 
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
 	"go.uber.org/zap"
 )
 
@@ -37,7 +37,6 @@ func GrpcServerOption(svr *grpc.Server) Option {
 		return nil
 	}
 }
-
 
 func New(name string, logger *zap.Logger, options ...Option) (*Application, error) {
 	app := &Application{

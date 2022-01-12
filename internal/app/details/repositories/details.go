@@ -3,8 +3,8 @@ package repositories
 import (
 	"github.com/jinzhu/gorm"
 	"github.com/pkg/errors"
+	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
 )
 
 type DetailsRepository interface {

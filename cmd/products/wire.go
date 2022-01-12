@@ -1,20 +1,21 @@
+//go:build wireinject
 // +build wireinject
 
 package main
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/app/products"
-	"github.com/sdgmf/go-project-sample/internal/app/products/controllers"
-	"github.com/sdgmf/go-project-sample/internal/app/products/services"
-	"github.com/sdgmf/go-project-sample/internal/app/products/grpcclients"
-	"github.com/sdgmf/go-project-sample/internal/pkg/config"
-	"github.com/sdgmf/go-project-sample/internal/pkg/consul"
-	"github.com/sdgmf/go-project-sample/internal/pkg/log"
-	"github.com/sdgmf/go-project-sample/internal/pkg/jaeger"
-	"github.com/sdgmf/go-project-sample/internal/pkg/app"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/http"
+	"github.com/wahello/gin-wire-plate/internal/app/products"
+	"github.com/wahello/gin-wire-plate/internal/app/products/controllers"
+	"github.com/wahello/gin-wire-plate/internal/app/products/grpcclients"
+	"github.com/wahello/gin-wire-plate/internal/app/products/services"
+	"github.com/wahello/gin-wire-plate/internal/pkg/app"
+	"github.com/wahello/gin-wire-plate/internal/pkg/config"
+	"github.com/wahello/gin-wire-plate/internal/pkg/consul"
+	"github.com/wahello/gin-wire-plate/internal/pkg/jaeger"
+	"github.com/wahello/gin-wire-plate/internal/pkg/log"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
 )
 
 var providerSet = wire.NewSet(
@@ -29,7 +30,6 @@ var providerSet = wire.NewSet(
 	services.ProviderSet,
 	products.ProviderSet,
 )
-
 
 func CreateApp(cf string) (*app.Application, error) {
 	panic(wire.Build(providerSet))

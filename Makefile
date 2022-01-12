@@ -35,7 +35,9 @@ lint:
 	golint ./...
 .PHONY: proto
 proto:
-	protoc -I api/proto ./api/proto/* --go_out=plugins=grpc:api/proto
+	# protoc -I api/proto ./api/proto/* --go_out=plugins=grpc:api/proto
+	protoc -I api/proto ./api/proto/* --go_out=api/pb --go-grpc_out=api/pb
+	
 .PHONY: dash
 dash: # create grafana dashboard
 	 for app in $(apps) ;\

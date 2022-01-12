@@ -1,14 +1,15 @@
+//go:build wireinject
 // +build wireinject
 
 package controllers
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/pkg/config"
-	"github.com/sdgmf/go-project-sample/internal/pkg/database"
-	"github.com/sdgmf/go-project-sample/internal/pkg/log"
-	"github.com/sdgmf/go-project-sample/internal/app/reviews/services"
-	"github.com/sdgmf/go-project-sample/internal/app/reviews/repositories"
+	"github.com/wahello/gin-wire-plate/internal/app/reviews/repositories"
+	"github.com/wahello/gin-wire-plate/internal/app/reviews/services"
+	"github.com/wahello/gin-wire-plate/internal/pkg/config"
+	"github.com/wahello/gin-wire-plate/internal/pkg/database"
+	"github.com/wahello/gin-wire-plate/internal/pkg/log"
 )
 
 var testProviderSet = wire.NewSet(
@@ -19,7 +20,6 @@ var testProviderSet = wire.NewSet(
 	//repositories.ProviderSet,
 	ProviderSet,
 )
-
 
 func CreateReviewsController(cf string, sto repositories.ReviewsRepository) (*ReviewsController, error) {
 	panic(wire.Build(testProviderSet))

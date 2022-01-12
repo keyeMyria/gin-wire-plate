@@ -5,10 +5,10 @@ import (
 	"flag"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
-	"github.com/sdgmf/go-project-sample/mocks"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"github.com/wahello/gin-wire-plate/internal/pkg/models"
+	"github.com/wahello/gin-wire-plate/mocks"
 	"io/ioutil"
 	"net/http/httptest"
 	"testing"
@@ -45,7 +45,7 @@ func TestReviewsController_Get(t *testing.T) {
 	tests := []struct {
 		name     string
 		id       uint64
-		expected  int
+		expected int
 	}{
 		{"1", 1, 1},
 		{"2", 2, 1},

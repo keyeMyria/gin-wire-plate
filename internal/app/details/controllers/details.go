@@ -2,10 +2,10 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/wahello/gin-wire-plate/internal/app/details/services"
 	"go.uber.org/zap"
 	"net/http"
 	"strconv"
-	"github.com/sdgmf/go-project-sample/internal/app/details/services"
 )
 
 type DetailsController struct {
@@ -30,7 +30,7 @@ func (pc *DetailsController) Get(c *gin.Context) {
 	p, err := pc.service.Get(ID)
 	if err != nil {
 		pc.logger.Error("get product by id error", zap.Error(err))
-		c.String(http.StatusInternalServerError,"%+v", err)
+		c.String(http.StatusInternalServerError, "%+v", err)
 		return
 	}
 

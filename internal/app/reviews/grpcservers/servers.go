@@ -2,12 +2,10 @@ package grpcservers
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/api/proto"
-	"github.com/sdgmf/go-project-sample/internal/pkg/transports/grpc"
+	"github.com/wahello/gin-wire-plate/api/proto"
+	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
 	stdgrpc "google.golang.org/grpc"
 )
-
-
 
 func CreateInitServersFn(
 	ps *ReviewsServer,

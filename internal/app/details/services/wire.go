@@ -1,13 +1,14 @@
+//go:build wireinject
 // +build wireinject
 
 package services
 
 import (
 	"github.com/google/wire"
-	"github.com/sdgmf/go-project-sample/internal/pkg/config"
-	"github.com/sdgmf/go-project-sample/internal/pkg/database"
-	"github.com/sdgmf/go-project-sample/internal/pkg/log"
-	"github.com/sdgmf/go-project-sample/internal/app/details/repositories"
+	"github.com/wahello/gin-wire-plate/internal/app/details/repositories"
+	"github.com/wahello/gin-wire-plate/internal/pkg/config"
+	"github.com/wahello/gin-wire-plate/internal/pkg/database"
+	"github.com/wahello/gin-wire-plate/internal/pkg/log"
 )
 
 var testProviderSet = wire.NewSet(

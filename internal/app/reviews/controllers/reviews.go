@@ -2,10 +2,10 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/wahello/gin-wire-plate/internal/app/reviews/services"
 	"go.uber.org/zap"
 	"net/http"
 	"strconv"
-	"github.com/sdgmf/go-project-sample/internal/app/reviews/services"
 )
 
 type ReviewsController struct {
@@ -30,7 +30,7 @@ func (pc *ReviewsController) Query(c *gin.Context) {
 	rs, err := pc.service.Query(ID)
 	if err != nil {
 		pc.logger.Error("get review by productID error", zap.Error(err))
-		c.String(http.StatusInternalServerError,"%+v", err)
+		c.String(http.StatusInternalServerError, "%+v", err)
 		return
 	}
 

@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/sdgmf/go-project-sample/internal/app/products/services"
+	"github.com/wahello/gin-wire-plate/internal/app/products/services"
 	"go.uber.org/zap"
 	"net/http"
 	"strconv"

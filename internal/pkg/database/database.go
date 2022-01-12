@@ -6,8 +6,8 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
+	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
 )
 
 // Options is  configuration of database

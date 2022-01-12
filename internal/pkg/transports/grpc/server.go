@@ -11,8 +11,8 @@ import (
 	consulApi "github.com/hashicorp/consul/api"
 	"github.com/opentracing/opentracing-go"
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/internal/pkg/utils/netutil"
 	"github.com/spf13/viper"
+	"github.com/wahello/gin-wire-plate/internal/pkg/utils/netutil"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"log"
@@ -44,7 +44,6 @@ type Server struct {
 	server    *grpc.Server
 	consulCli *consulApi.Client
 }
-
 
 type InitServers func(s *grpc.Server)
 

@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/pkg/errors"
-	"github.com/sdgmf/go-project-sample/api/proto"
-	"github.com/sdgmf/go-project-sample/internal/pkg/models"
+	"github.com/wahello/gin-wire-plate/api/proto"
+	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
 )
 
