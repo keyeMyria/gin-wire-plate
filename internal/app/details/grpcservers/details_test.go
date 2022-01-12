@@ -3,12 +3,14 @@ package grpcservers
 import (
 	"context"
 	"flag"
-	"gin-wire-plate/api/proto"
+	"testing"
+
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/pkg/models"
 	"gin-wire-plate/mocks"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"testing"
 )
 
 var configFile = flag.String("f", "details.yml", "set config file which viper will loading.")
@@ -44,7 +46,7 @@ func TestDetailsService_Get(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			req := &proto.GetDetailRequest{
+			req := &pb.GetDetailRequest{
 				Id: test.id,
 			}
 			p, err := server.Get(context.Background(), req)

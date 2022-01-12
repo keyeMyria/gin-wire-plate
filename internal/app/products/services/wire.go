@@ -4,7 +4,7 @@
 package services
 
 import (
-	"gin-wire-plate/api/proto"
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/pkg/config"
 	"gin-wire-plate/internal/pkg/log"
 
@@ -18,8 +18,8 @@ var testProviderSet = wire.NewSet(
 )
 
 func CreateProductsService(cf string,
-	detailsSvc proto.DetailsClient,
-	ratingsSvc proto.RatingsClient,
-	reviewsSvc proto.ReviewsClient) (ProductsService, error) {
+	detailsSvc pb.DetailsClient,
+	ratingsSvc pb.RatingsClient,
+	reviewsSvc pb.ReviewsClient) (ProductsService, error) {
 	panic(wire.Build(testProviderSet))
 }

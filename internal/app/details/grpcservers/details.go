@@ -2,7 +2,8 @@ package grpcservers
 
 import (
 	"context"
-	"gin-wire-plate/api/proto"
+
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/app/details/services"
 
 	"github.com/golang/protobuf/ptypes"
@@ -22,7 +23,7 @@ func NewDetailsServer(logger *zap.Logger, ps services.DetailsService) (*DetailsS
 	}, nil
 }
 
-func (s *DetailsServer) Get(ctx context.Context, req *proto.GetDetailRequest) (*proto.Detail, error) {
+func (s *DetailsServer) Get(ctx context.Context, req *pb.GetDetailRequest) (*pb.Detail, error) {
 	p, err := s.service.Get(req.Id)
 	if err != nil {
 		return nil, errors.Wrap(err, "details grpc service get detail error")
@@ -32,7 +33,7 @@ func (s *DetailsServer) Get(ctx context.Context, req *proto.GetDetailRequest) (*
 		return nil, errors.Wrap(err, "convert create time error")
 	}
 
-	resp := &proto.Detail{
+	resp := &pb.Detail{
 		Id:          uint64(p.ID),
 		Name:        p.Name,
 		Price:       p.Price,

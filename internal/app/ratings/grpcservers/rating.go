@@ -2,7 +2,8 @@ package grpcservers
 
 import (
 	"context"
-	"gin-wire-plate/api/proto"
+
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/app/ratings/services"
 
 	"github.com/golang/protobuf/ptypes"
@@ -22,7 +23,7 @@ func NewRatingsServer(logger *zap.Logger, ps services.RatingsService) (*RatingsS
 	}, nil
 }
 
-func (s *RatingsServer) Get(ctx context.Context, req *proto.GetRatingRequest) (*proto.Rating, error) {
+func (s *RatingsServer) Get(ctx context.Context, req *pb.GetRatingRequest) (*pb.Rating, error) {
 	r, err := s.service.Get(req.ProductID)
 	if err != nil {
 		return nil, errors.Wrap(err, "product grpc service get rating error")
@@ -32,7 +33,7 @@ func (s *RatingsServer) Get(ctx context.Context, req *proto.GetRatingRequest) (*
 		return nil, errors.Wrap(err, "convert create time error")
 	}
 
-	resp := &proto.Rating{
+	resp := &pb.Rating{
 		Id:          uint64(r.ID),
 		ProductID:   r.ProductID,
 		Score:       r.Score,

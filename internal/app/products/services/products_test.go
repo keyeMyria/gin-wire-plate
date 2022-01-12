@@ -3,9 +3,10 @@ package services
 import (
 	"context"
 	"flag"
-	"gin-wire-plate/api/proto"
-	"gin-wire-plate/mocks"
 	"testing"
+
+	"gin-wire-plate/api/pb"
+	"gin-wire-plate/mocks"
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/stretchr/testify/assert"
@@ -20,40 +21,40 @@ func TestDefaultProductsService_Get(t *testing.T) {
 
 	detailsCli := new(mocks.DetailsClient)
 	detailsCli.On("Get", mock.Anything, mock.Anything).
-		Return(func(ctx context.Context, req *proto.GetDetailRequest, cos ...grpc.CallOption) *proto.Detail {
-			return &proto.Detail{
+		Return(func(ctx context.Context, req *pb.GetDetailRequest, cos ...grpc.CallOption) *pb.Detail {
+			return &pb.Detail{
 				Id:          req.Id,
 				CreatedTime: ptypes.TimestampNow(),
 			}
-		}, func(ctx context.Context, req *proto.GetDetailRequest, cos ...grpc.CallOption) error {
+		}, func(ctx context.Context, req *pb.GetDetailRequest, cos ...grpc.CallOption) error {
 			return nil
 		})
 
 	ratingsCli := new(mocks.RatingsClient)
 
-	ratingsCli.On("Get", context.Background(), mock.AnythingOfType("*proto.GetRatingRequest")).
-		Return(func(ctx context.Context, req *proto.GetRatingRequest, cos ...grpc.CallOption) *proto.Rating {
-			return &proto.Rating{
+	ratingsCli.On("Get", context.Background(), mock.AnythingOfType("*pb.GetRatingRequest")).
+		Return(func(ctx context.Context, req *pb.GetRatingRequest, cos ...grpc.CallOption) *pb.Rating {
+			return &pb.Rating{
 				Id:          req.ProductID,
 				UpdatedTime: ptypes.TimestampNow(),
 			}
-		}, func(ctx context.Context, req *proto.GetRatingRequest, cos ...grpc.CallOption) error {
+		}, func(ctx context.Context, req *pb.GetRatingRequest, cos ...grpc.CallOption) error {
 			return nil
 		})
 
 	reviewsCli := new(mocks.ReviewsClient)
 
-	reviewsCli.On("Query", context.Background(), mock.AnythingOfType("*proto.QueryReviewsRequest")).
-		Return(func(ctx context.Context, req *proto.QueryReviewsRequest, cos ...grpc.CallOption) *proto.QueryReviewsResponse {
-			return &proto.QueryReviewsResponse{
-				Reviews: []*proto.Review{
-					&proto.Review{
+	reviewsCli.On("Query", context.Background(), mock.AnythingOfType("*pb.QueryReviewsRequest")).
+		Return(func(ctx context.Context, req *pb.QueryReviewsRequest, cos ...grpc.CallOption) *pb.QueryReviewsResponse {
+			return &pb.QueryReviewsResponse{
+				Reviews: []*pb.Review{
+					&pb.Review{
 						Id:          req.ProductID,
 						CreatedTime: ptypes.TimestampNow(),
 					},
 				},
 			}
-		}, func(ctx context.Context, req *proto.QueryReviewsRequest, cos ...grpc.CallOption) error {
+		}, func(ctx context.Context, req *pb.QueryReviewsRequest, cos ...grpc.CallOption) error {
 			return nil
 		})
 

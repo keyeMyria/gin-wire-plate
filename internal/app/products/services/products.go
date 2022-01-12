@@ -2,7 +2,8 @@ package services
 
 import (
 	"context"
-	"gin-wire-plate/api/proto"
+
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/pkg/models"
 
 	"github.com/golang/protobuf/ptypes"
@@ -16,15 +17,15 @@ type ProductsService interface {
 
 type DefaultProductsService struct {
 	logger     *zap.Logger
-	detailsSvc proto.DetailsClient
-	ratingsSvc proto.RatingsClient
-	reviewsSvc proto.ReviewsClient
+	detailsSvc pb.DetailsClient
+	ratingsSvc pb.RatingsClient
+	reviewsSvc pb.ReviewsClient
 }
 
 func NewProductService(logger *zap.Logger,
-	detailsSvc proto.DetailsClient,
-	ratingsSvc proto.RatingsClient,
-	reviewsSvc proto.ReviewsClient) ProductsService {
+	detailsSvc pb.DetailsClient,
+	ratingsSvc pb.RatingsClient,
+	reviewsSvc pb.ReviewsClient) ProductsService {
 	return &DefaultProductsService{
 		logger:     logger.With(zap.String("type", "DefaultProductsService")),
 		detailsSvc: detailsSvc,
@@ -42,7 +43,7 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 
 	// get detail
 	{
-		req := &proto.GetDetailRequest{
+		req := &pb.GetDetailRequest{
 			Id: productID,
 		}
 
@@ -61,7 +62,7 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 
 	// get rating
 	{
-		req := &proto.GetRatingRequest{
+		req := &pb.GetRatingRequest{
 			ProductID: productID,
 		}
 
@@ -80,7 +81,7 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 
 	// query reviews
 	{
-		req := &proto.QueryReviewsRequest{
+		req := &pb.QueryReviewsRequest{
 			ProductID: productID,
 		}
 

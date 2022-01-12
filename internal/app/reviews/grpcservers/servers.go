@@ -1,18 +1,16 @@
 package grpcservers
 
 import (
-	"gin-wire-plate/api/proto"
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/pkg/transports/grpc"
 
 	"github.com/google/wire"
 	stdgrpc "google.golang.org/grpc"
 )
 
-func CreateInitServersFn(
-	ps *ReviewsServer,
-) grpc.InitServers {
+func CreateInitServersFn(ps *ReviewsServer) grpc.InitServers {
 	return func(s *stdgrpc.Server) {
-		proto.RegisterReviewsServer(s, ps)
+		pb.RegisterReviewsServer(s, ps)
 	}
 }
 

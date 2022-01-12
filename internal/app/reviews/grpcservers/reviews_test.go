@@ -3,7 +3,7 @@ package grpcservers
 import (
 	"context"
 	"flag"
-	"gin-wire-plate/api/proto"
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/pkg/models"
 	"gin-wire-plate/mocks"
 	"testing"
@@ -45,7 +45,7 @@ func TestReviewsServer_Query(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			req := &proto.QueryReviewsRequest{
+			req := &pb.QueryReviewsRequest{
 				ProductID: test.id,
 			}
 			rs, err := server.Query(context.Background(), req)

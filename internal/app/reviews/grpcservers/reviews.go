@@ -2,7 +2,7 @@ package grpcservers
 
 import (
 	"context"
-	"gin-wire-plate/api/proto"
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/app/reviews/services"
 
 	"github.com/golang/protobuf/ptypes"
@@ -22,14 +22,14 @@ func NewReviewsServer(logger *zap.Logger, ps services.ReviewsService) (*ReviewsS
 	}, nil
 }
 
-func (s *ReviewsServer) Query(ctx context.Context, req *proto.QueryReviewsRequest) (*proto.QueryReviewsResponse, error) {
+func (s *ReviewsServer) Query(ctx context.Context, req *pb.QueryReviewsRequest) (*pb.QueryReviewsResponse, error) {
 	rs, err := s.service.Query(req.ProductID)
 	if err != nil {
 		return nil, errors.Wrap(err, "reviews grpc service get reviews error")
 	}
 
-	resp := &proto.QueryReviewsResponse{
-		Reviews: make([]*proto.Review, 0, len(rs)),
+	resp := &pb.QueryReviewsResponse{
+		Reviews: make([]*pb.Review, 0, len(rs)),
 	}
 	for _, r := range rs {
 		ct, err := ptypes.TimestampProto(r.CreatedTime)
@@ -37,7 +37,7 @@ func (s *ReviewsServer) Query(ctx context.Context, req *proto.QueryReviewsReques
 			return nil, errors.Wrap(err, "convert create time error")
 		}
 
-		pr := &proto.Review{
+		pr := &pb.Review{
 			Id:          uint64(r.ID),
 			ProductID:   r.ProductID,
 			Message:     r.Message,

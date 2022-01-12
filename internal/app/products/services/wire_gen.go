@@ -7,15 +7,16 @@
 package services
 
 import (
-	"gin-wire-plate/api/proto"
+	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/pkg/config"
 	"gin-wire-plate/internal/pkg/log"
+
 	"github.com/google/wire"
 )
 
 // Injectors from wire.go:
 
-func CreateProductsService(cf string, detailsSvc proto.DetailsClient, ratingsSvc proto.RatingsClient, reviewsSvc proto.ReviewsClient) (ProductsService, error) {
+func CreateProductsService(cf string, detailsSvc pb.DetailsClient, ratingsSvc pb.RatingsClient, reviewsSvc pb.ReviewsClient) (ProductsService, error) {
 	viper, err := config.New(cf)
 	if err != nil {
 		return nil, err
