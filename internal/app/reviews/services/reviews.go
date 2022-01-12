@@ -1,9 +1,10 @@
 package services
 
 import (
+	"gin-wire-plate/internal/app/reviews/repositories"
+	"gin-wire-plate/internal/pkg/models"
+
 	"github.com/pkg/errors"
-	"github.com/wahello/gin-wire-plate/internal/app/reviews/repositories"
-	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
 )
 

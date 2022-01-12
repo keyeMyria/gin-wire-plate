@@ -2,10 +2,11 @@ package services
 
 import (
 	"context"
+	"gin-wire-plate/api/proto"
+	"gin-wire-plate/internal/pkg/models"
+
 	"github.com/golang/protobuf/ptypes"
 	"github.com/pkg/errors"
-	"github.com/wahello/gin-wire-plate/api/proto"
-	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
 )
 

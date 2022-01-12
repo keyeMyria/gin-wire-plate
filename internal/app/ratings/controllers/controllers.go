@@ -1,9 +1,10 @@
 package controllers
 
 import (
+	"gin-wire-plate/internal/pkg/transports/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
 )
 
 func CreateInitControllersFn(

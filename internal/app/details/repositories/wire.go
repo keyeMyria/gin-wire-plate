@@ -5,9 +5,10 @@ package repositories
 
 import (
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/internal/pkg/config"
-	"github.com/wahello/gin-wire-plate/internal/pkg/database"
-	"github.com/wahello/gin-wire-plate/internal/pkg/log"
+
+	"gin-wire-plate/internal/pkg/config"
+	"gin-wire-plate/internal/pkg/database"
+	"gin-wire-plate/internal/pkg/log"
 )
 
 var testProviderSet = wire.NewSet(

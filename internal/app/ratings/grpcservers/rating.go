@@ -2,10 +2,11 @@ package grpcservers
 
 import (
 	"context"
+	"gin-wire-plate/api/proto"
+	"gin-wire-plate/internal/app/ratings/services"
+
 	"github.com/golang/protobuf/ptypes"
 	"github.com/pkg/errors"
-	"github.com/wahello/gin-wire-plate/api/proto"
-	"github.com/wahello/gin-wire-plate/internal/app/ratings/services"
 	"go.uber.org/zap"
 )
 

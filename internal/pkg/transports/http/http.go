@@ -6,6 +6,9 @@ import (
 	"net/http"
 	"time"
 
+	"gin-wire-plate/internal/pkg/transports/http/middlewares/ginprom"
+	"gin-wire-plate/internal/pkg/utils/netutil"
+
 	"github.com/gin-contrib/pprof"
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
@@ -16,8 +19,6 @@ import (
 	"github.com/pkg/errors"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/spf13/viper"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http/middlewares/ginprom"
-	"github.com/wahello/gin-wire-plate/internal/pkg/utils/netutil"
 	"go.uber.org/zap"
 )
 

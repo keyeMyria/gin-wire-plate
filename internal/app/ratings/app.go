@@ -1,12 +1,13 @@
 package ratings
 
 import (
+	"gin-wire-plate/internal/pkg/app"
+	"gin-wire-plate/internal/pkg/transports/grpc"
+	"gin-wire-plate/internal/pkg/transports/http"
+
 	"github.com/google/wire"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
-	"github.com/wahello/gin-wire-plate/internal/pkg/app"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
 	"go.uber.org/zap"
 )
 

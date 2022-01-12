@@ -4,14 +4,15 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/mock"
-	"github.com/wahello/gin-wire-plate/internal/pkg/models"
-	"github.com/wahello/gin-wire-plate/mocks"
+	"gin-wire-plate/internal/pkg/models"
+	"gin-wire-plate/mocks"
 	"io/ioutil"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/gin-gonic/gin"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/mock"
 )
 
 var r *gin.Engine

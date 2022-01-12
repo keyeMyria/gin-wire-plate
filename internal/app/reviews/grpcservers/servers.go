@@ -1,9 +1,10 @@
 package grpcservers
 
 import (
+	"gin-wire-plate/api/proto"
+	"gin-wire-plate/internal/pkg/transports/grpc"
+
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/api/proto"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
 	stdgrpc "google.golang.org/grpc"
 )
 

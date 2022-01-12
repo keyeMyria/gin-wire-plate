@@ -4,10 +4,11 @@
 package services
 
 import (
+	"gin-wire-plate/api/proto"
+	"gin-wire-plate/internal/pkg/config"
+	"gin-wire-plate/internal/pkg/log"
+
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/api/proto"
-	"github.com/wahello/gin-wire-plate/internal/pkg/config"
-	"github.com/wahello/gin-wire-plate/internal/pkg/log"
 )
 
 var testProviderSet = wire.NewSet(

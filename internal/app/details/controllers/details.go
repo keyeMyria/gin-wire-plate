@@ -1,11 +1,12 @@
 package controllers
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/wahello/gin-wire-plate/internal/app/details/services"
-	"go.uber.org/zap"
+	"gin-wire-plate/internal/app/details/services"
 	"net/http"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 type DetailsController struct {

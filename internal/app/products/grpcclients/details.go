@@ -1,9 +1,10 @@
 package grpcclients
 
 import (
+	"gin-wire-plate/api/proto"
+	"gin-wire-plate/internal/pkg/transports/grpc"
+
 	"github.com/pkg/errors"
-	"github.com/wahello/gin-wire-plate/api/proto"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
 )
 
 func NewDetailsClient(client *grpc.Client) (proto.DetailsClient, error) {

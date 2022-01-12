@@ -7,20 +7,20 @@
 package main
 
 import (
+	"gin-wire-plate/internal/app/details"
+	"gin-wire-plate/internal/app/details/controllers"
+	"gin-wire-plate/internal/app/details/grpcservers"
+	"gin-wire-plate/internal/app/details/repositories"
+	"gin-wire-plate/internal/app/details/services"
+	"gin-wire-plate/internal/pkg/app"
+	"gin-wire-plate/internal/pkg/config"
+	"gin-wire-plate/internal/pkg/consul"
+	"gin-wire-plate/internal/pkg/database"
+	"gin-wire-plate/internal/pkg/jaeger"
+	"gin-wire-plate/internal/pkg/log"
+	"gin-wire-plate/internal/pkg/transports/grpc"
+	"gin-wire-plate/internal/pkg/transports/http"
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/internal/app/details"
-	"github.com/wahello/gin-wire-plate/internal/app/details/controllers"
-	"github.com/wahello/gin-wire-plate/internal/app/details/grpcservers"
-	"github.com/wahello/gin-wire-plate/internal/app/details/repositories"
-	"github.com/wahello/gin-wire-plate/internal/app/details/services"
-	"github.com/wahello/gin-wire-plate/internal/pkg/app"
-	"github.com/wahello/gin-wire-plate/internal/pkg/config"
-	"github.com/wahello/gin-wire-plate/internal/pkg/consul"
-	"github.com/wahello/gin-wire-plate/internal/pkg/database"
-	"github.com/wahello/gin-wire-plate/internal/pkg/jaeger"
-	"github.com/wahello/gin-wire-plate/internal/pkg/log"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
 )
 
 // Injectors from wire.go:

@@ -11,7 +11,7 @@
 ## 快速开始
 下载项目
 ```bash
-    git clone https://github.com/wahello/gin-wire-plate.git
+    git clone https://github.co/wahello/gin-wire-plate.git
     cd go-project-sample
     git submodule init
     git submodule update

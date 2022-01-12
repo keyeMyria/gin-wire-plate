@@ -1,4 +1,4 @@
-module github.com/wahello/gin-wire-plate
+module gin-wire-plate
 
 go 1.17
 

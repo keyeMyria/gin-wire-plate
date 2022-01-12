@@ -4,21 +4,21 @@
 package main
 
 import (
+	"gin-wire-plate/internal/app/ratings"
+	"gin-wire-plate/internal/app/ratings/controllers"
+	"gin-wire-plate/internal/app/ratings/grpcservers"
+	"gin-wire-plate/internal/app/ratings/repositories"
+	"gin-wire-plate/internal/app/ratings/services"
+	"gin-wire-plate/internal/pkg/app"
+	"gin-wire-plate/internal/pkg/config"
+	"gin-wire-plate/internal/pkg/consul"
+	"gin-wire-plate/internal/pkg/jaeger"
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/internal/app/ratings"
-	"github.com/wahello/gin-wire-plate/internal/app/ratings/controllers"
-	"github.com/wahello/gin-wire-plate/internal/app/ratings/grpcservers"
-	"github.com/wahello/gin-wire-plate/internal/app/ratings/repositories"
-	"github.com/wahello/gin-wire-plate/internal/app/ratings/services"
-	"github.com/wahello/gin-wire-plate/internal/pkg/app"
-	"github.com/wahello/gin-wire-plate/internal/pkg/config"
-	"github.com/wahello/gin-wire-plate/internal/pkg/consul"
-	"github.com/wahello/gin-wire-plate/internal/pkg/jaeger"
 
-	"github.com/wahello/gin-wire-plate/internal/pkg/database"
-	"github.com/wahello/gin-wire-plate/internal/pkg/log"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
+	"gin-wire-plate/internal/pkg/database"
+	"gin-wire-plate/internal/pkg/log"
+	"gin-wire-plate/internal/pkg/transports/grpc"
+	"gin-wire-plate/internal/pkg/transports/http"
 )
 
 var providerSet = wire.NewSet(

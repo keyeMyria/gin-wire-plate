@@ -3,7 +3,8 @@ package controllers
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
+
+	"gin-wire-plate/internal/pkg/transports/http"
 )
 
 func CreateInitControllersFn(

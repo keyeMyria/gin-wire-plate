@@ -1,14 +1,16 @@
 package app
 
 import (
-	"github.com/pkg/errors"
 	"os"
 	"os/signal"
 	"syscall"
 
+	"github.com/pkg/errors"
+
+	"gin-wire-plate/internal/pkg/transports/grpc"
+	"gin-wire-plate/internal/pkg/transports/http"
+
 	"github.com/google/wire"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/grpc"
-	"github.com/wahello/gin-wire-plate/internal/pkg/transports/http"
 	"go.uber.org/zap"
 )
 

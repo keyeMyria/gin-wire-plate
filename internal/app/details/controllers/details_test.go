@@ -1,14 +1,16 @@
 package controllers
 
 import (
-	"encoding/json"
-	"flag"
-	"fmt"
+	"gin-wire-plate/internal/pkg/models"
+	"gin-wire-plate/mocks"
+
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/wahello/gin-wire-plate/internal/pkg/models"
-	"github.com/wahello/gin-wire-plate/mocks"
+
+	"encoding/json"
+	"flag"
+	"fmt"
 	"io/ioutil"
 	"net/http/httptest"
 	"testing"

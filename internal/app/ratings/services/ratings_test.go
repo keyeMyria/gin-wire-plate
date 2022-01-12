@@ -2,11 +2,12 @@ package services
 
 import (
 	"flag"
+	"gin-wire-plate/internal/pkg/models"
+	"gin-wire-plate/mocks"
+	"testing"
+
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/wahello/gin-wire-plate/internal/pkg/models"
-	"github.com/wahello/gin-wire-plate/mocks"
-	"testing"
 )
 
 var configFile = flag.String("f", "ratings.yml", "set config file which viper will loading.")

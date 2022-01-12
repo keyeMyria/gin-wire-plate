@@ -1,9 +1,10 @@
 package repositories
 
 import (
+	"gin-wire-plate/internal/pkg/models"
+
 	"github.com/jinzhu/gorm"
 	"github.com/pkg/errors"
-	"github.com/wahello/gin-wire-plate/internal/pkg/models"
 	"go.uber.org/zap"
 )
 
