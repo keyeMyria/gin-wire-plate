@@ -6,9 +6,9 @@ import (
 	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/app/ratings/services"
 
-	"github.com/golang/protobuf/ptypes"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type RatingsServer struct {
@@ -28,10 +28,7 @@ func (s *RatingsServer) Get(ctx context.Context, req *pb.GetRatingRequest) (*pb.
 	if err != nil {
 		return nil, errors.Wrap(err, "product grpc service get rating error")
 	}
-	ut, err := ptypes.TimestampProto(r.UpdatedTime)
-	if err != nil {
-		return nil, errors.Wrap(err, "convert create time error")
-	}
+	ut := timestamppb.New(r.UpdatedTime)
 
 	resp := &pb.Rating{
 		Id:          uint64(r.ID),

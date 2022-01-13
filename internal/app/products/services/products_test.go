@@ -8,10 +8,10 @@ import (
 	"gin-wire-plate/api/pb"
 	"gin-wire-plate/mocks"
 
-	"github.com/golang/protobuf/ptypes"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"google.golang.org/grpc"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 )
 
 var configFile = flag.String("f", "products.bak", "set config file which viper will loading.")
@@ -24,7 +24,7 @@ func TestDefaultProductsService_Get(t *testing.T) {
 		Return(func(ctx context.Context, req *pb.GetDetailRequest, cos ...grpc.CallOption) *pb.Detail {
 			return &pb.Detail{
 				Id:          req.Id,
-				CreatedTime: ptypes.TimestampNow(),
+				CreatedTime: timestamppb.Now(),
 			}
 		}, func(ctx context.Context, req *pb.GetDetailRequest, cos ...grpc.CallOption) error {
 			return nil
@@ -36,7 +36,7 @@ func TestDefaultProductsService_Get(t *testing.T) {
 		Return(func(ctx context.Context, req *pb.GetRatingRequest, cos ...grpc.CallOption) *pb.Rating {
 			return &pb.Rating{
 				Id:          req.ProductID,
-				UpdatedTime: ptypes.TimestampNow(),
+				UpdatedTime: timestamppb.Now(),
 			}
 		}, func(ctx context.Context, req *pb.GetRatingRequest, cos ...grpc.CallOption) error {
 			return nil
@@ -50,7 +50,7 @@ func TestDefaultProductsService_Get(t *testing.T) {
 				Reviews: []*pb.Review{
 					&pb.Review{
 						Id:          req.ProductID,
-						CreatedTime: ptypes.TimestampNow(),
+						CreatedTime: timestamppb.Now(),
 					},
 				},
 			}

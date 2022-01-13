@@ -6,9 +6,9 @@ import (
 	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/app/details/services"
 
-	"github.com/golang/protobuf/ptypes"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type DetailsServer struct {
@@ -28,10 +28,7 @@ func (s *DetailsServer) Get(ctx context.Context, req *pb.GetDetailRequest) (*pb.
 	if err != nil {
 		return nil, errors.Wrap(err, "details grpc service get detail error")
 	}
-	ct, err := ptypes.TimestampProto(p.CreatedTime)
-	if err != nil {
-		return nil, errors.Wrap(err, "convert create time error")
-	}
+	ct := timestamppb.New(p.CreatedTime)
 
 	resp := &pb.Detail{
 		Id:          uint64(p.ID),

@@ -6,7 +6,6 @@ import (
 	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/pkg/models"
 
-	"github.com/golang/protobuf/ptypes"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )
@@ -51,7 +50,7 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 		if err != nil {
 			return nil, errors.Wrap(err, "get rating error")
 		}
-		ct, err := ptypes.Timestamp(pd.CreatedTime)
+		ct := pd.CreatedTime.AsTime()
 
 		detail = &models.Detail{
 			ID:          pd.Id,
@@ -70,7 +69,7 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 		if err != nil {
 			return nil, errors.Wrap(err, "get rating error")
 		}
-		ut, err := ptypes.Timestamp(pr.UpdatedTime)
+		ut := pr.UpdatedTime.AsTime()
 
 		rating = &models.Rating{
 			ID:          pr.Id,
@@ -93,10 +92,7 @@ func (s *DefaultProductsService) Get(c context.Context, productID uint64) (p *mo
 		reviews = make([]*models.Review, 0, len(resp.Reviews))
 
 		for _, pr := range resp.Reviews {
-			ct, err := ptypes.Timestamp(pr.CreatedTime)
-			if err != nil {
-				return nil, errors.Wrapf(err, "convert create time error")
-			}
+			ct := pr.CreatedTime.AsTime()
 
 			r := &models.Review{
 				ID:          pr.Id,

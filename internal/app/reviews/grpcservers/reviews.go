@@ -5,9 +5,9 @@ import (
 	"gin-wire-plate/api/pb"
 	"gin-wire-plate/internal/app/reviews/services"
 
-	"github.com/golang/protobuf/ptypes"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
+	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
 )
 
 type ReviewsServer struct {
@@ -32,10 +32,7 @@ func (s *ReviewsServer) Query(ctx context.Context, req *pb.QueryReviewsRequest) 
 		Reviews: make([]*pb.Review, 0, len(rs)),
 	}
 	for _, r := range rs {
-		ct, err := ptypes.TimestampProto(r.CreatedTime)
-		if err != nil {
-			return nil, errors.Wrap(err, "convert create time error")
-		}
+		ct := timestamppb.New(r.CreatedTime)
 
 		pr := &pb.Review{
 			Id:          uint64(r.ID),

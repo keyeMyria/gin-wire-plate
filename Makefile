@@ -36,7 +36,8 @@ lint:
 .PHONY: proto
 proto:
 	# protoc -I api/proto ./api/proto/* --go_out=plugins=grpc:api/proto
-	protoc -I api/proto ./api/proto/* --go_out=api/pb --go-grpc_out=api/pb
+	# protoc -I api/proto ./api/proto/* --go_out=api/pb --go-grpc_out=api/pb
+	protoc -I api/proto ./api/proto/* --go_out=api/pb --go-grpc_out=require_unimplemented_servers=false:api/pb
 	
 .PHONY: dash
 dash: # create grafana dashboard
